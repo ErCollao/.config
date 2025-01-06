@@ -1,0 +1,6 @@
+font-family = FiraCode Nerd Font Mono
+theme = nord
+keybind = ctrl+shift+h=csi:D
+keybind = ctrl+shift+j=csi:B
+keybind = ctrl+shift+k=csi:A
+keybind = ctrl+shift+l=csi:C
