@@ -8,11 +8,11 @@ return {
     config = function()
       require('nvim-treesitter.configs').setup({
         highlight = {
-          -- enable = true,
+          enable = true,
           -- additional_vim_regex_highlighting = false,
         },
         indent = {
-          -- enable = true,
+          enable = true,
         },
         textobjects = {
           select = {
@@ -44,10 +44,6 @@ return {
     end,
   },
   {
-    "neovim/nvim-lspconfig",
-    lazy = false,
-  },
-  {
     "williamboman/mason.nvim",
     lazy = false,
     config = function()
@@ -56,5 +52,33 @@ return {
   },
   {
     'williamboman/mason-lspconfig.nvim',
-  }
+    config = function()
+      require('mason-lspconfig').setup({
+        ensure_installed = {
+          'ruby_lsp',
+          'rubocop',
+          'lua_ls',
+          'stimulus_ls'
+        },
+      })
+    end,
+  },
+  {
+    "neovim/nvim-lspconfig",
+    lazy = false,
+    config = function()
+      local lspconfig = require('lspconfig')
+      lspconfig.lua_ls.setup({})
+      lspconfig.ruby_lsp.setup({})
+      lspconfig.rubocop.setup({
+        cmd = { "bundle", "exec", "rubocop", "--lsp" },
+        root_dir = lspconfig.util.root_pattern("Gemfile", ".git", "."),
+      })
+      lspconfig.stimulus_ls.setup({})
+
+      vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
+      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
+      vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
+    end,
+  },
 }
