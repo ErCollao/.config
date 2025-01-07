@@ -22,5 +22,5 @@ vim.opt.cursorline = true
 -- -- For old redraws, let's only activate it if there's an actual problem
 -- vim.opt.lazyredraw = true
 -- -- Seems like this _is_ the actual behavior, which means we should probably get rid of it
--- vim.opt.splitbelow = true
--- vim.opt.splitright = true
+vim.opt.splitbelow = true
+vim.opt.splitright = true

@@ -1,6 +1,7 @@
 " This is my old vimrc, but as I add things to the new config (or
 " decide to get rid of them), I remove things. So this is a bit of
 " a weird file, but it doesn't really do anything in nvim
+
 if &term =~# '^screen'
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -25,11 +26,6 @@ let g:netrw_winsize = 25
 call plug#begin('~/.vim/plugged')
   Plug 'github/copilot.vim'
   " 
-  " Language support for Ruby on Rails editing
-  Plug 'vim-ruby/vim-ruby'
-  " Lets plugins (e.g. vim-surround) repeat with the . command
-  Plug 'tpope/vim-rails'
-  "
   " Matching parentheses
   Plug 'jiangmiao/auto-pairs'
   "
@@ -43,77 +39,17 @@ call plug#begin('~/.vim/plugged')
   " Tab autocompletes in a smart way
   Plug 'ervandew/supertab'
   "
-  " Lets languages understand more programming languages
-  Plug 'sheerun/vim-polyglot'
-  "
-  " Snippets in Vim
-  Plug 'marcweber/vim-addon-mw-utils'
-  Plug 'tomtom/tlib_vim'
-  Plug 'garbas/vim-snipmate'
-  Plug 'honza/vim-snippets'
-  "
-  " Use .editorconfig file for indentation and the like
-  Plug 'editorconfig/editorconfig-vim'
-  "
-  "
-  " CtrlP fuzzy finder
-  " Plug 'kien/ctrlp.vim'
-  "
   " Plugins to enter zen mode for writing (narrow and highlighted)
   Plug 'junegunn/goyo.vim'
   Plug 'junegunn/limelight.vim'
   "
-  " Asyncronous checking
-  Plug 'dense-analysis/ale'
-  "
-  " Language support for Vue
-  Plug 'posva/vim-vue'
-  "
-  " Language support for Svelte
-  Plug 'evanleck/vim-svelte', {'branch': 'main'}
-  "
-  " Navigates seamlessly panes from vim and tmux (ctrl+hjkl)
-  Plug 'christoomey/vim-tmux-navigator'
-  "
   " Lets me use Vim as a wiki with easy keybindings
   Plug 'vimwiki/vimwiki'
-  " 
-  " Natural way of using netrw file browser with keystroke - (and other
-  " Plugins to explore at some point
-  "
-  " Check what overlaps exist between supertab and vim-snippets
-  " 
-  " HTML generator
-  " Plug 'rstacruz/sparkup'
-  "
-  " Using Ack for search, check differences with ripgrep and :Rg (they seem
-  " equally fast)
-  " Plug 'mileszs/ack.vim'
-
-  Plug 'jgdavey/tslime.vim'
-  "
 call plug#end()
 
 " Goyo is a focus mode that you enter typing :Goyo (and leave it typing :Goyo!), and the following line activates limelight when doing that
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
-
-" Configuration of ALE linter
-let g:ale_set_highlights = 0
-let g:ale_linters = {
-      \   'ruby': ['rubocop']
-      \}
-let g:ale_fixers = {
-      \   'ruby': ['rubocop'],
-      \}
-let g:ale_ruby_rubocop_executable = 'bundle'
-let g:ale_ruby_rubocop_options = '-D'
-
-" Mods to the colorscheme
-hi NonText ctermfg=none
-
-" Config for EditorConfig to play nice with Vim Fugitive
-let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 " Config for Vim WIKI
 let g:vimwiki_list = [{'path': '~/.wiki', 'index': '@index', 'syntax': 'markdown', 'ext': '.md'}]
@@ -128,22 +64,12 @@ endfunction
 
 " *********** COMMANDS ************* 
 
-" Quickly edit vimrc file
-command Evimrc edit ~/.vim/vimrc
-command Svimrc source ~/.vim/vimrc
-" NOT REALLY NEEDED
-
-highlight VertSplit guifg=#3E4452
-
 function! Json() abort
   silent ! clear
   silent %! python -m json.tool
 endfunction
 command! Json :call Json()
 " NOT REALLY NEEDED
-
-" Configuration for snipMate
-let g:snipMate = { 'snippet_version' : 1  }
 
 " Quick run-with-ruby
 autocmd FileType ruby nnoremap <Leader>r :w<cr>:vertical terminal !ruby %<cr>
