@@ -16,6 +16,8 @@ vim.opt.visualbell = false
 
 vim.opt.linebreak = true
 
+vim.opt.cursorline = true
+
 -- -- OBSOLETE DEFAULTS?
 -- -- For old redraws, let's only activate it if there's an actual problem
 -- vim.opt.lazyredraw = true
