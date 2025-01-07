@@ -145,15 +145,6 @@ command! Json :call Json()
 " Configuration for snipMate
 let g:snipMate = { 'snippet_version' : 1  }
 
-let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
-map <Leader>f :call RunCurrentSpecFile()<CR>
-map <Leader>j :call RunNearestSpec()<CR>
-map <Leader>k :call RunLastSpec()<CR>
-map <Leader>h :call RunAllSpecs()<CR>
-let g:tslime_always_current_session = 1
-let g:tslime_always_current_window = 1
-let g:tslime_autoset_pane = 1
-
 " Quick run-with-ruby
 autocmd FileType ruby nnoremap <Leader>r :w<cr>:vertical terminal !ruby %<cr>
 autocmd FileType rust nnoremap <Leader>r :vertical terminal cargo run<cr>
