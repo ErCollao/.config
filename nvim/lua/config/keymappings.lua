@@ -12,8 +12,8 @@ vim.keymap.set("n", "<leader>a", ":set spell!<CR>")
 vim.keymap.set("n", "<leader>u", "1z=")
 
 -- Easier navigation on searches
-vim.keymap.set("n", "<C-n>", ":cnext")
-vim.keymap.set("n", "<C-p>", ":cprevious")
+vim.keymap.set("n", "<C-n>", ":cnext<CR>")
+vim.keymap.set("n", "<C-p>", ":cprevious<CR>")
 
 -- Repeat the last macro (instead of going into Ex mode)
 vim.keymap.set("n", "QQ", "@@")
