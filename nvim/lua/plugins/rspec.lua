@@ -3,10 +3,14 @@ return {
   {
     'thoughtbot/vim-rspec',
     config = function()
-      vim.keymap.set('n', '<Leader>f', ':call RunCurrentSpecFile()<CR>')
-      vim.keymap.set('n', '<Leader>j', ':call RunNearestSpec()<CR>')
-      vim.keymap.set('n', '<Leader>k', ':call RunLastSpec()<CR>')
-      vim.keymap.set('n', '<Leader>h', ':call RunAllSpecs()<CR>')
+      vim.keymap.set('n', '<Leader>jf', -- Test file
+        ':call RunCurrentSpecFile()<CR>')
+      vim.keymap.set('n', '<Leader>jj', -- Current line
+        ':call RunNearestSpec()<CR>')
+      vim.keymap.set('n', '<Leader>jk', -- Repeat
+        ':call RunLastSpec()<CR>')
+      vim.keymap.set('n', '<Leader>ja', -- Test all
+        ':call RunAllSpecs()<CR>')
       vim.g.rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
     end,
   },
