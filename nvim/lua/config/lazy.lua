@@ -14,6 +14,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   end
 end
 vim.opt.rtp:prepend(lazypath)
+vim.opt.showmode = false
 
 -- Setup lazy.nvim
 require("lazy").setup({
@@ -25,3 +26,7 @@ require("lazy").setup({
   -- automatically check for plugin updates
   checker = { enabled = true  },
 })
+
+-- Keybindings
+vim.keymap.set('n', '<leader>ll', ':Lazy<CR>')
+vim.keymap.set('n', '<leader>lu', ':Lazy update<CR>')
