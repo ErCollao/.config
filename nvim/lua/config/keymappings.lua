@@ -8,7 +8,7 @@ vim.keymap.set("n", "<leader><CR>", ":noh<CR>")
 vim.keymap.set("n", "<leader>s", ":%s/<C-r><C-w>//g<Left><Left>")
 
 -- Activate spellcheck
-vim.keymap.set("n", "<leader>a", ":set spell!<CR>")
+vim.keymap.set("n", "<leader>w", ":set spell!<CR>")
 vim.keymap.set("n", "<leader>u", "1z=")
 
 -- Easier navigation on searches
