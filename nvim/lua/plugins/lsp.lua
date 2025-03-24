@@ -69,7 +69,12 @@ return {
     config = function()
       local lspconfig = require('lspconfig')
       lspconfig.lua_ls.setup({})
-      lspconfig.ruby_lsp.setup({})
+      lspconfig.ruby_lsp.setup({
+        init_options = {
+          formatter = 'standard',
+          linters = { 'standard' },
+        },
+      })
       lspconfig.rubocop.setup({
         cmd = { "bundle", "exec", "rubocop", "--lsp" },
         root_dir = lspconfig.util.root_pattern("Gemfile", ".git", "."),
