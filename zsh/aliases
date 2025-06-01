@@ -21,3 +21,7 @@ alias gbtmd='git checkout master && git pull --prune && git branch -d $(current_
 # My quick access to servers
 # alias sshwpfairforce='ssh fkqkuhxkmu@fairforce.fi'
 # alias sshfairforce='ssh ercollao@185.26.48.205'
+
+if test -f ~/.config/aliases.local; then
+  source ~/.config/aliases.local
+fi

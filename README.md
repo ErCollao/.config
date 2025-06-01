@@ -18,6 +18,7 @@ This respository assumes you have installed:
  - Oh-my-zsh terminal configuration
  - Tmux terminal multiplexer
  - Nvim text editor
+ - rbenv to manage ruby versions
 
 ## Setting up `zsh`
 
@@ -26,12 +27,23 @@ environment variable to point to `.config/zsh`, and that will
 take care of the rest. If not possible, [see section below](#Partial configurations).
 
 To read the zsh configuration from the repository's files,
-you need to create the file `.zprofile` with the following
+you need to create the file `.zshenv` with the following
 contents:
 
 ```bash
 export ZDOTDIR="$HOME/.config/zsh"
 ```
+
+## Customizations of local `zsh`
+
+It is common to have specific aliases and environment variables
+in each machine (or to transfer them separately, e.g. keys to
+APIs and the like). Because of that, both for aliases and
+environment variables, the system will check for the existence
+of these files, and if present, will source them:
+
+ - `~/.config/zsh/aliases.local`
+ - `~/.config/zsh/env.local`
 
 ## Partial configuration of `zsh`
 

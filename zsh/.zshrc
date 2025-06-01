@@ -101,10 +101,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Aliases
-source ~/.config/aliases
+source ~/.config/zsh/aliases
 
 # SSH into terminals with color and italics
 alias ssh='TERM=xterm-256color ssh'
 
-alias cdearthster="cd ~/Development/earthster"
 export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
