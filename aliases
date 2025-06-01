@@ -1,0 +1,23 @@
+# My personalized tooling instead of ls and such
+# alias ls='ls --color=tty --quoting-style=literal'
+alias l='ls -GCF'
+alias la='ls -GCFa'
+alias ll='ls -lhGF'
+alias lla='ls -lhGFa'
+alias lll='du -skh *'
+alias vim.='vim .'
+alias ww='vim ~/.wiki/index.md.wiki'
+alias cd..='cd ..'
+alias :q=exit
+alias :Q=exit
+alias :qa='tmux kill-session'
+alias browse_hivemind='firefox localhost:5000'
+alias ggr='git graph'
+alias gpp='git pull --prune'
+
+alias gbtm='git checkout master && git pull --prune' # Git back to master
+alias gbtmd='git checkout master && git pull --prune && git branch -d $(current_branch)' # Git back to master and delete
+
+# My quick access to servers
+# alias sshwpfairforce='ssh fkqkuhxkmu@fairforce.fi'
+# alias sshfairforce='ssh ercollao@185.26.48.205'

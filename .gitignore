@@ -8,3 +8,5 @@ zed
 raycast
 iTerm2
 htop
+zsh/.zcompdump*
+zsh/.zsh_history
