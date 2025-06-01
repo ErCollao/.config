@@ -44,14 +44,15 @@ return {
     end,
   },
   {
-    "williamboman/mason.nvim",
-    lazy = false,
+    "mason-org/mason.nvim",
+    version = "^1.0.0", -- For now until they patch the new lsp api
     config = function()
       require('mason').setup()
     end
   },
   {
-    'williamboman/mason-lspconfig.nvim',
+    'mason-org/mason-lspconfig.nvim',
+    version = "^1.0.0", -- For now until they patch the new lsp api
     config = function()
       require('mason-lspconfig').setup({
         ensure_installed = {

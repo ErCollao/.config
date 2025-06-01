@@ -5,7 +5,7 @@ return {
   version = false, -- set this to "*" if you want to always pull the latest change, false to update on release
   opts = {
     claude = {
-      model = 'claude-3-7-sonnet-20250219',
+      model = 'claude-sonnet-4-20250514',
       temperature = 0,
       max_tokens = 4096,
     }
